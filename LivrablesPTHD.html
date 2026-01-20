@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Consignes — Journal de bord (Passe Ton Hack) — GitHub Pages</title>
+  <style>
+    :root{
+      --max: 980px;
+      --bg: #0b0c10;
+      --card: #14161c;
+      --text: #e9eef7;
+      --muted: #aab4c4;
+      --line: #2a2f3a;
+      --accent: #7aa2ff;
+      --ok: #68d391;
+      --warn: #f6ad55;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a{color: var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      border-bottom: 1px solid var(--line);
+      padding: 22px 16px;
+    }
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    h1{margin:0 0 6px; font-size: 1.55rem}
+    .sub{margin:0; color: var(--muted)}
+    main{padding: 22px 16px 56px}
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 14px;
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size: 1.2rem;
+    }
+    .card h3{
+      margin: 14px 0 8px;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+    .tagrow{display:flex; flex-wrap:wrap; gap:8px; margin: 10px 0 0}
+    .tag{
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 2px 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 900px){
+      .grid-2{grid-template-columns: 1fr 1fr;}
+    }
+    pre{
+      background:#0f1116;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      overflow:auto;
+      margin: 8px 0 0;
+    }
+    code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;}
+    ul{margin: 8px 0 0 18px}
+    ol{margin: 8px 0 0 18px}
+    .note{
+      border-left: 4px solid var(--accent);
+      background: #0f1116;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+    .ok{border-left-color: var(--ok)}
+    .warn{border-left-color: var(--warn)}
+    table{
+      width:100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      overflow:hidden;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+    }
+    th, td{
+      border-bottom: 1px solid var(--line);
+      padding: 10px 10px;
+      text-align:left;
+      vertical-align: top;
+    }
+    th{color: var(--muted); font-weight: 600; background: #0f1116}
+    tr:last-child td{border-bottom:none}
+    footer{
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 14px 16px;
+        }
+    
+      .footer-center{
+  text-align: center;
+}
+
+  
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      border: 1px solid var(--line);
+      border-bottom-color: #1f2430;
+      background: #0f1116;
+      border-radius: 8px;
+      padding: 2px 8px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Consignes — Journal de bord final (Passe Ton Hack)</h1>
+      <p class="sub">Rendu en <strong>site web</strong> (HTML/CSS) par <strong>équipes</strong>, avec <strong>1 page par élève</strong>, publié sur <strong>GitHub Pages</strong>.</p>
+      <div class="tagrow">
+        <span class="tag">1 dépôt GitHub par équipe</span>
+        <span class="tag">1 page HTML par élève</span>
+        <span class="tag">captures commentées</span>
+        <span class="tag">CSS commun</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <section class="card">
+        <h2>1) Livrable attendu</h2>
+        <ul>
+          <li>Un <strong>mini-site</strong> hébergé sur GitHub Pages (URL publique).</li>
+          <li><strong>1 dépôt GitHub par équipe</strong>.</li>
+          <li><strong>1 page HTML par élève</strong> : <span class="kbd">prenom-nom.html</span></li>
+          <li>Un <strong>CSS commun</strong> : <span class="kbd">style.css</span></li>
+          <li>Un dossier <strong>assets</strong> contenant les captures (organisées par élève).</li>
+          <li>Une page d’accueil <span class="kbd">index.html</span> (équipe) listant et liant toutes les pages élèves.</li>
+        </ul>
+
+        <div class="note ok">
+          Objectif : produire une preuve claire de votre démarche (raisonnement, outils, obstacles, validation) grâce à des captures d’écran <strong>commentées</strong>.
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>2) Organisation du dépôt (obligatoire)</h2>
+        <pre><code>/
+│ index.html
+│ style.css
+│ README.md
+└─ assets/
+   └─ eleves/
+      ├─ prenom-nom/
+      │  ├─ p1_01.png
+      │  ├─ p1_02.png
+      │  ├─ p2_01.png
+      │  └─ ...
+      └─ prenom2-nom2/
+         └─ ...</code></pre>
+
+        <h3>Conventions de nommage</h3>
+        <ul>
+          <li>Fichiers HTML : <strong>minuscules</strong>, sans espaces, avec tirets → <span class="kbd">prenom-nom.html</span></li>
+          <li>Captures : <span class="kbd">p1_01.png</span> = Problématique 1, capture 1 (puis p1_02, p2_01, ...)</li>
+          <li>Formats images acceptés : .png, .jpg, .webp</li>
+        </ul>
+
+        <div class="note warn">
+          Interdiction : rendre un PDF/Word à la place du site. Le rendu attendu est un <strong>site navigable</strong>.
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>3) Page équipe : <span class="kbd">index.html</span></h2>
+        <p>La page d’accueil doit contenir :</p>
+        <ul>
+          <li>Nom de l’équipe + membres + rôles (même simples).</li>
+          <li>Liste des élèves avec lien vers chaque page : <span class="kbd">prenom-nom.html</span></li>
+          <li>Rappel des règles de preuve (captures commentées, pas de données sensibles).</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>4) Page élève : format “PROBLÉMATIQUES” (obligatoire)</h2>
+        <p>Chaque page élève doit être structurée en plusieurs <strong>PROBLÉMATIQUES</strong> (une par challenge traité).</p>
+
+        <div class="grid-2">
+          <div class="card" style="margin:0">
+            <h3>Rubriques à remplir pour chaque PROBLÉMATIQUE</h3>
+            <ul>
+              <li><strong>ÉNONCÉ / Descriptif</strong> (contexte + objectif)</li>
+              <li><strong>RÉSOLUTION</strong> : démarche détaillée (étapes)</li>
+              <li><strong>Outil(s) / Ressource(s)</strong> utilisées</li>
+              <li><strong>Difficulté(s)</strong> rencontrée(s) + correction</li>
+              <li><strong>Ce que j’ai appris</strong> (3 points min.)</li>
+              <li><strong>Grand Oral</strong> : ce que je peux réutiliser</li>
+              <li><strong>Captures d’écran commentées</strong> (preuve)</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin:0">
+            <h3>Captures d’écran : exigences minimales</h3>
+            <ul>
+              <li><strong>Au moins 3 captures</strong> par problématique (recommandé : 4–6).</li>
+              <li>Chaque capture doit avoir une <strong>légende</strong> : ce qu’on voit + pourquoi c’est une preuve.</li>
+              <li>Chaque capture doit être reliée à une <strong>étape</strong> (ex : “Étape 2”).</li>
+              <li><strong>Aucune donnée sensible</strong> : mots de passe, tokens, emails privés, IP internes, etc.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Présentation des commandes/outils</h3>
+        <p>Quand vous utilisez le terminal ou des commandes, elles doivent être présentées proprement en bloc code :</p>
+        <pre><code># Exemple (adapter)
+nmap -sV 10.10.10.10
+curl -I https://example.com
+python3 exploit.py</code></pre>
+      </section>
+
+      <section class="card">
+        <h2>5) Exigences techniques HTML/CSS</h2>
+        <ul>
+          <li>HTML sémantique : <span class="kbd">header</span>, <span class="kbd">main</span>, <span class="kbd">section</span>, <span class="kbd">footer</span></li>
+          <li>Titres hiérarchisés : <span class="kbd">h1</span>, <span class="kbd">h2</span>, <span class="kbd">h3</span></li>
+          <li>Images : attribut <span class="kbd">alt</span> obligatoire</li>
+          <li>Navigation : lien “retour accueil équipe” sur chaque page élève</li>
+          <li>CSS : un seul fichier <span class="kbd">style.css</span> partagé par toutes les pages</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>6) Publication GitHub Pages (procédure)</h2>
+        <ol>
+          <li>Pousser le dépôt sur GitHub (branche <span class="kbd">main</span>).</li>
+          <li>Aller dans <span class="kbd">Settings → Pages</span>.</li>
+          <li>Choisir : <span class="kbd">Deploy from a branch</span>.</li>
+          <li>Sélectionner : branch <span class="kbd">main</span> et folder <span class="kbd">/(root)</span>.</li>
+          <li>Récupérer l’URL fournie (site public) et la rendre.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>7) Barème (sur 20)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Critère</th>
+              <th>Attendu</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Respect du format “PROBLÉMATIQUES”</td>
+              <td>Rubriques complètes, plusieurs challenges, cohérence</td>
+              <td>/6</td>
+            </tr>
+            <tr>
+              <td>Captures commentées</td>
+              <td>Preuves claires, légendes, organisation des fichiers</td>
+              <td>/6</td>
+            </tr>
+            <tr>
+              <td>Démarche technique</td>
+              <td>Étapes, justification, résolution des blocages</td>
+              <td>/4</td>
+            </tr>
+            <tr>
+              <td>Qualité web</td>
+              <td>Navigation, HTML propre, CSS commun, alt, lisibilité</td>
+              <td>/4</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+  </main>
+
+ <footer>
+  <div class="wrap footer-center">
+    <p>
+      E.S • L.H • Terminale NSI • Année 2025–2026<br>
+      Lycée Ozanam – Lille
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
